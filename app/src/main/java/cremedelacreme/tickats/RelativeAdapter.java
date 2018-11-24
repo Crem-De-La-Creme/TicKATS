@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,12 +32,12 @@ public class RelativeAdapter extends RecyclerView.Adapter<RelativeAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
         holder.c1.setText(mArr1.get(i));
         holder.c2.setText(mArr2.get(i));
-        holder.c3.setText(mArr3.get(i))
+        holder.c3.setText(mArr3.get(i));
         }
 
     @Override
     public int getItemCount() {
-        return 0;
+      return mArr1.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -49,18 +48,9 @@ public class RelativeAdapter extends RecyclerView.Adapter<RelativeAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            c1 = itemView.findViewById(R.id.);
-            c2 = itemView.findViewById(R.id.);
-            c3 = itemView.findViewById(R.id.);
-
-            super(itemView);
+            c1 = itemView.findViewById(R.id.ColOne);
+            c2 = itemView.findViewById(R.id.ColTwo);
+            c3 = itemView.findViewById(R.id.ColThree);
         }
     }
-
-
-
-
-
-
-
 }
