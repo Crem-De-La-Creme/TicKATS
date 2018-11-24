@@ -13,6 +13,13 @@ public class TicketDetails extends AppCompatActivity {
     private ArrayList<String> mArr1 = new ArrayList<>();
     private ArrayList<String> mArr2 = new ArrayList<>();
     private ArrayList<String> mArr3 = new ArrayList<>();
+    private ArrayList<String> mArr4 = new ArrayList<>();
+    private ArrayList<String> mArr5 = new ArrayList<>();
+    private ArrayList<String> mArr6 = new ArrayList<>();
+    private ArrayList<String> mArr7 = new ArrayList<>();
+    private ArrayList<String> mArr8 = new ArrayList<>();
+    private ArrayList<String> mArr9 = new ArrayList<>();
+
 
     @Override
     //main
@@ -20,8 +27,7 @@ public class TicketDetails extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_details);
-
-
+        
         AddInfo1();
         RecycleView1();
         AddInfo2();
@@ -36,7 +42,6 @@ public class TicketDetails extends AppCompatActivity {
         HeavyScroll.setAdapter(adapter);
         HeavyScroll.setLayoutManager(new LinearLayoutManager(this ));
         }
-
     private void AddInfo1 (){
         mArr1.add("1234");
         mArr2.add("Excavator");
@@ -44,26 +49,25 @@ public class TicketDetails extends AppCompatActivity {
     }
     private void RecycleView2(){
         RecyclerView ToolScroll = findViewById(R.id.ToolScroll);
-        RelativeAdapter adapter = new RelativeAdapter(mArr1, mArr2, mArr3);
+        RelativeAdapter adapter = new RelativeAdapter(mArr4, mArr5, mArr6);
         ToolScroll.setAdapter(adapter);
         ToolScroll.setLayoutManager(new LinearLayoutManager(this ));
     }
-
     private void AddInfo2 (){
-        mArr1.add("567");
-        mArr2.add("SkillSaw");
-        mArr3.add("Red");
+        mArr4.add("567");
+        mArr5.add("SkillSaw");
+        mArr6.add("Red");
     }
     private void RecycleView3(){
         RecyclerView WorkerScroll = findViewById(R.id.WorkerScroll);
-        RelativeAdapter adapter = new RelativeAdapter(mArr1, mArr2, mArr3);
+        RelativeAdapter adapter = new RelativeAdapter(mArr7, mArr8, mArr9);
         WorkerScroll.setAdapter(adapter);
         WorkerScroll.setLayoutManager(new LinearLayoutManager(this ));
     }
-
     private void AddInfo3 (){
-        mArr1.add("Dirty");
-        mArr2.add("Bubble");
-        mArr3.add("555-555-5555");
+
+        mArr7.add("Dirty");
+        mArr8.add("Bubble");
+        mArr9.add("555-555-5555");
     }
 }
