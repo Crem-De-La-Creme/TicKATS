@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -45,9 +46,10 @@ public class RelativeAdapter extends RecyclerView.Adapter<RelativeAdapter.ViewHo
         TextView c2;
         TextView c3;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            c1 = itemView.findViewById(R)
+            c1 = itemView.findViewById(R.id.);
             c2 = itemView.findViewById(R.id.);
             c3 = itemView.findViewById(R.id.);
 
