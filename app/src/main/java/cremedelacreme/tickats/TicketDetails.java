@@ -11,15 +11,15 @@ import java.util.ArrayList;
 public class TicketDetails extends AppCompatActivity {
 
     // Arrays to hold data in RecyclerViews (scroll boxes)
-    private ArrayList<String> mArr1 = new ArrayList<>();
-    private ArrayList<String> mArr2 = new ArrayList<>();
-    private ArrayList<String> mArr3 = new ArrayList<>(); //End Heavy Equipment arrays
-    private ArrayList<String> mArr4 = new ArrayList<>();
-    private ArrayList<String> mArr5 = new ArrayList<>();
-    private ArrayList<String> mArr6 = new ArrayList<>(); //End Tools (light equip) arrays
-    private ArrayList<String> mArr7 = new ArrayList<>();
-    private ArrayList<String> mArr8 = new ArrayList<>();
-    private ArrayList<String> mArr9 = new ArrayList<>(); //End Worker arrays
+    public static ArrayList<String> mArr1 = new ArrayList<>();
+    public static ArrayList<String> mArr2 = new ArrayList<>();
+    public static ArrayList<String> mArr3 = new ArrayList<>(); //End Heavy Equipment arrays
+    public static ArrayList<String> mArr4 = new ArrayList<>();
+    public static ArrayList<String> mArr5 = new ArrayList<>();
+    public static ArrayList<String> mArr6 = new ArrayList<>(); //End Tools (light equip) arrays
+    public static ArrayList<String> mArr7 = new ArrayList<>();
+    public static ArrayList<String> mArr8 = new ArrayList<>();
+    public static ArrayList<String> mArr9 = new ArrayList<>(); //End Worker arrays
 
 
     @Override
@@ -30,6 +30,8 @@ public class TicketDetails extends AppCompatActivity {
         setContentView(R.layout.activity_ticket_details);
                                 /*Adds data to RecyclerView boxes and positions them using
                                 RelativeAdapter 1= Heavy Equip view; 2= Tools view; 3=Workers view*/
+
+
         AddInfo1();
         RecycleView1();
 
@@ -49,9 +51,12 @@ public class TicketDetails extends AppCompatActivity {
         HeavyScroll.setLayoutManager(new LinearLayoutManager(this ));
         }
     private void AddInfo1 (){                          //Adds info to Heavy Equipment scroll box
-        mArr1.add("5678");
-        mArr2.add("Excavator");
-        mArr3.add("Green");
+        String TID = "17";
+        BackGroundWorker thread = new BackGroundWorker(this);
+        thread.execute("HeavyEquip", TID);
+        //mArr1.add("5678");
+        //mArr2.add("Excavator");
+        //mArr3.add("Green");
     }
     private void RecycleView2(){                      //Formats Tools info in its scroll box
         RecyclerView ToolScroll = findViewById(R.id.ToolScroll);
@@ -86,5 +91,4 @@ public class TicketDetails extends AppCompatActivity {
         TextView Priority = findViewById(R.id.PriorityBox);
         Priority.setText("4-Critical");
     }
-
 }
