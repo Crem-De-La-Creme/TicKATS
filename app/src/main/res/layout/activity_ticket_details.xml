@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Jobsite"
         android:layout_width="52dp"
         android:layout_height="22dp"
         android:layout_marginStart="8dp"
@@ -40,22 +40,20 @@
         app:layout_constraintVertical_bias="0.02" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/Start"
         android:layout_width="34dp"
         android:layout_height="19dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginStart="92dp"
         android:text="Start"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/Jobsite"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.026" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/Status"
         android:layout_width="44dp"
         android:layout_height="18dp"
         android:layout_marginStart="52dp"
@@ -65,29 +63,28 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/Priority"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Start"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.026" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/Priority"
         android:layout_width="48dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="16dp"
+        android:layout_height="18dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="8dp"
-        android:text="Prority"
+        android:text="Priority"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.026" />
 
     <TextView
-        android:id="@+id/JobAddress"
+        android:id="@+id/JobsiteBox"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginStart="8dp"
@@ -95,45 +92,44 @@
         android:text="Addy"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/Jobsite" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="34dp"
+        android:id="@+id/StartBox"
+        android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:text="date"
-        app:layout_constraintEnd_toStartOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.67"
-        app:layout_constraintStart_toEndOf="@+id/JobAddress"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toStartOf="@+id/StatusBox"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toEndOf="@+id/JobsiteBox"
+        app:layout_constraintTop_toBottomOf="@+id/Start" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/StatusBox"
         android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginEnd="32dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="60dp"
         android:text="status"
         app:layout_constraintBottom_toTopOf="@+id/textView15"
-        app:layout_constraintEnd_toStartOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintEnd_toStartOf="@+id/PriorityBox"
+        app:layout_constraintTop_toBottomOf="@+id/Status"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="33dp"
-        android:layout_height="24dp"
+        android:id="@+id/PriorityBox"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="64dp"
         android:text="HiLo"
         app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/Status" />
 
     <TextView
         android:id="@+id/textView12"
@@ -152,14 +148,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/StartBox"
         app:layout_constraintVertical_bias="0.060000002" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="101dp"
         android:layout_height="23dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:text="Equipment ID"
         android:textColor="@android:color/black"
         android:textStyle="bold"
@@ -170,25 +166,23 @@
         android:id="@+id/textView14"
         android:layout_width="43dp"
         android:layout_height="19dp"
+        android:layout_marginStart="72dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginStart="57dp"
         android:text="Model"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView15"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="64dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="8dp"
-        android:text="Condition"
+        android:text="Availability"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -226,22 +220,25 @@
         android:id="@+id/textView19"
         android:layout_width="43dp"
         android:layout_height="19dp"
-        android:layout_marginStart="114dp"
+        android:layout_marginStart="115dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:text="Model"
         android:textColor="@android:color/black"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView20"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:layout_marginEnd="20dp"
-        android:text="Condition"
+        android:layout_marginEnd="40dp"
+        android:text="Availability"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -253,7 +250,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Workers:"
+        android:text="Workers Needed:"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -267,7 +264,7 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:text="First Name"
         android:textColor="@android:color/black"
         android:textSize="14sp"
@@ -279,33 +276,37 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginEnd="95dp"
         android:layout_marginStart="85dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="8dp"
         android:text="Last Name"
         android:textColor="@android:color/black"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView24"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.005" />
 
     <TextView
         android:id="@+id/textView24"
         android:layout_width="55dp"
         android:layout_height="20dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="44dp"
         android:text="Phone"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/WorkerScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ToolScroll"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/ToolScroll"
         android:layout_width="389dp"
-        android:layout_height="75dp"
+        android:layout_height="85dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="3dp"
@@ -320,9 +321,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/WorkerScroll"
         android:layout_width="389dp"
-        android:layout_height="90dp"
+        android:layout_height="85dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -335,7 +335,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/HeavyScroll"
         android:layout_width="389dp"
-        android:layout_height="75dp"
+        android:layout_height="85dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="3dp"
