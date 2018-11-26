@@ -20,28 +20,38 @@ public class TicketDetails extends AppCompatActivity {
     public static ArrayList<String> mArr7 = new ArrayList<>();
     public static ArrayList<String> mArr8 = new ArrayList<>();
     public static ArrayList<String> mArr9 = new ArrayList<>(); //End Worker arrays
-
-
+    public static ArrayList<String> mArr10 = new ArrayList<>();
+    public static ArrayList<String> mArr11 = new ArrayList<>();
+    public static ArrayList<String> mArr12 = new ArrayList<>();
+    public static String JobAddress,DateAdded,Prior;
     @Override
     //onCreate:= main
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_details);
-                                /*Adds data to RecyclerView boxes and positions them using
-                                RelativeAdapter 1= Heavy Equip view; 2= Tools view; 3=Workers view*/
 
+        //Adds data to RecyclerView boxes - TID passed from Brendan's screen should be passed
+        AddInfo1(/*TID*/);
+        AddInfo2(/*TID*/);
+        AddInfo3(/*TID*/);
 
-        AddInfo1();
+        //Puts thread to sleep for minimal time to allow data to be added.
+        try {
+            Thread.sleep(900);
+        }
+        catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        //positions them in format: RecycleView1 = Heavy Equip view; 2= Tools view; 3=Workers view*/
         RecycleView1();
-
-        AddInfo2();
         RecycleView2();
-
-        AddInfo3();
         RecycleView3();
 
+        //Populate header of Ticket Detail page
         populateHeader();
+
     }
 
     private void RecycleView1(){                       //Formats Heavy Equipment info in its scroll box
@@ -50,13 +60,11 @@ public class TicketDetails extends AppCompatActivity {
         HeavyScroll.setAdapter(adapter);
         HeavyScroll.setLayoutManager(new LinearLayoutManager(this ));
         }
-    private void AddInfo1 (){                          //Adds info to Heavy Equipment scroll box
-        String TID = "17";
+    private void AddInfo1 (/*TID*/){                          //Adds info to Heavy Equipment scroll box
+        String TID = "25";       //static TID for now, should accept TID from previous screen upon merge
         BackGroundWorker thread = new BackGroundWorker(this);
         thread.execute("HeavyEquip", TID);
-        //mArr1.add("5678");
-        //mArr2.add("Excavator");
-        //mArr3.add("Green");
+
     }
     private void RecycleView2(){                      //Formats Tools info in its scroll box
         RecyclerView ToolScroll = findViewById(R.id.ToolScroll);
@@ -64,10 +72,13 @@ public class TicketDetails extends AppCompatActivity {
         ToolScroll.setAdapter(adapter);
         ToolScroll.setLayoutManager(new LinearLayoutManager(this ));
     }
-    private void AddInfo2 (){                         //Adds info to Tools scroll box
-        mArr4.add("567");
-        mArr5.add("SkillSaw");
-        mArr6.add("Red");
+    private void AddInfo2 (/*TID*/){                         //Adds info to Tools scroll box
+        String TID = "30";                  //change static TID
+        BackGroundWorker thread = new BackGroundWorker(this);
+        thread.execute("LightEquip", TID);
+        //mArr4.add("567");   ******FOR TESTING PURPOSES
+        //mArr5.add("SkillSaw");
+        //mArr6.add("Red");
     }
     private void RecycleView3(){                      //Formats Workers info in its scroll box
         RecyclerView WorkerScroll = findViewById(R.id.WorkerScroll);
@@ -75,20 +86,27 @@ public class TicketDetails extends AppCompatActivity {
         WorkerScroll.setAdapter(adapter);
         WorkerScroll.setLayoutManager(new LinearLayoutManager(this ));
     }
-    private void AddInfo3 (){                          //Adds info to Workers scroll box
-        mArr7.add("Dirty");
-        mArr8.add("Bubble");
-        mArr9.add("555-555-5555");
+    private void AddInfo3 (/*TID*/){                          //Adds info to Workers scroll box
+        String TID = "30";                   //Change static TID
+        BackGroundWorker thread = new BackGroundWorker(this);
+        thread.execute("Workers", TID);
     }
 
-    private void populateHeader(){                     //Populates Jobsite, Start, Status, & Priority fields at top of screen
+    private void populateHeader(/*TID*/){                     //Populates Jobsite, Start, & Priority fields at top of screen
+        String TID = "30";
+        BackGroundWorker thread = new BackGroundWorker(this);
+
+        thread.execute("JobsiteHeader", TID);
+
+        try{
+            Thread.sleep(900);
+        }catch(InterruptedException e){}
+
         TextView JobAddy = findViewById(R.id.JobsiteBox);
-        JobAddy.setText("Exxon Mobil");
+        JobAddy.setText(JobAddress);
         TextView StartDate = findViewById(R.id.StartBox);
-        StartDate.setText("11/24/2018");
-        TextView Status = findViewById(R.id.StatusBox);
-        Status.setText("Open");
+        StartDate.setText(DateAdded);
         TextView Priority = findViewById(R.id.PriorityBox);
-        Priority.setText("4-Critical");
+        Priority.setText(Prior);
     }
 }
